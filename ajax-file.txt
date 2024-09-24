@@ -1,0 +1,2 @@
+Test ajax reading file.
+Hello!
