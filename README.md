@@ -63,3 +63,21 @@ Here are some common practices that professional programmers follow when coding 
         - Methods like call(), apply(), and bind() can refer this to any object.
         - **This of arrow function in browser is Window, but in node env is {}** 
 
+12. **RxJS most popular operators**
+    Creation operators: 
+        - of
+        - fromEvent
+    Pipeable operators: 
+        - map
+        - filter
+        - mergeMap
+        - switchMap
+        - concatMap
+        - catchError
+        - debounceTime
+        - distinctUntilChanged
+        - take.
+        - combineLatest
+
+13. **setTimeout(() => {}, 0)**
+    
