@@ -1,4 +1,4 @@
-# Common Practices for Professional JavaScript Programmers
+# Common Practices for JavaScript Programmers
 
 Here are some common practices that professional programmers follow when coding in JavaScript, sourced from W3Schools:
 
@@ -78,6 +78,15 @@ Here are some common practices that professional programmers follow when coding 
         - distinctUntilChanged
         - take.
         - combineLatest
+        - zip
+        - throttle time
 
 13. **setTimeout(() => {}, 0)**
-    
+    - What this video: https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=3s
+    - setTimeout even with delay = 0 still run after synchronous code.
+
+14. **Debounce & Throttle**
+    - Technique to improve the performance of application by reducing the number of times a 
+    particular action is taken.
+
+    - Source: https://www.youtube.com/watch?v=cjIswDCKgu0
