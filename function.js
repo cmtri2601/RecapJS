@@ -68,14 +68,23 @@ const button = document.getElementById('btn');
 // button.addEventListener('click', obj.display); // "this" in this case is button
 button.addEventListener('click', obj.display.bind(obj)); // "this" in this case is obj
 
-// closures
-const add = (function() {
+
+
+// closures - enforce encapsulation - a fundamental aspect of OOP.
+const closure = (function() {
+    // this function is a closure that encapsulates a private variable
+    
+    // private variable need to protect
     let counter = 0;
-    return function() {
-        counter++;
-        return counter;
+
+    // public method to access private variable
+    return {
+        add: () => ++counter,
+        sub: () => --counter,
     }
-})()
-console.log(add());
-console.log(add());
-console.log(add());
+})();
+console.log(closure.add());
+console.log(closure.add());
+console.log(closure.add());
+console.log(closure.sub());
+console.log(closure.sub());
