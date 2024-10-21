@@ -35,7 +35,7 @@ failPromise
 // ----------------- Read file - use AJAX (need browser environment) -----------------
 function getFile (url) {
     const promise = new Promise((resolve, reject) => {
-        const req = new XMLHttpRequest();
+        const req = new XMLHttpRequest(); // only can run on browser
         req.onload = function() {
             if (this.status == 200) {
                 resolve(this);
