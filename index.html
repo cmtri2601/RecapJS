@@ -3,6 +3,7 @@
 <head>
     <title>Recap JS</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/rxjs@7.8.1/dist/bundles/rxjs.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,6 +20,16 @@
             <input type="text" id="textName" name="textName" placeholder="Enter name" ><br><br>
             <input type="text" id="textValue" name="textValue" placeholder="Enter value"><br><br>
             <input type="number" id="expire" name="expire" placeholder="Enter expire days"><br><br>
+            
+            <input type="file" id="file" accept="image/*"><br><br>
+            <input type="file" id="files" multiple accept="application/json,.json,text/json"><br><br> 
+            <!-- 
+                text/html,.html,text/xml,.xml
+                text/css,.css
+                application/json,.json,text/json
+                image/*,.png,.jpg,.gif,.webp,image/jpeg,image/gif,image/webp,image/png  
+            -->
+            
             <button id="btn" class="funcBtn">Click me!</button>
             <button id="btnGetCookie" class="funcBtn">Get cookie</button>
             <button id="btnDelCookie" class="funcBtn">Delete cookie</button>
@@ -41,13 +52,26 @@
         </div>
     </div>
     <!-- Put script at bottom to increase speed load page (html => script) -->
+    
+    <!-- bundle script -->
+    <!-- <script src="dist/bundle.js"></script> -->
+    
+    <!--  -->
     <!-- <script src="promise.js"></script> -->
     <!-- <script src="function.js"></script> -->
     <!-- <script src="ajax.js"></script> -->
     <!-- <script src="cookie.js"></script> -->
     <!-- <script src="objects.js"></script> -->
     <!-- <script src="DOM.js"></script> -->
-    <script src="debouce_throttle.js"></script>
+    <!-- <script src="debouce_throttle.js"></script> -->
+    
+    <!-- RxJS script -->
+    <!-- <script src="RxJS/fromEvent.js"></script>
+    <script type="module" src="RxJS/ajax.js"></script> -->
+
+    <!-- file script -->
+    <!-- <script src="file/blob.js"></script> -->
+    <script src="file/data-form.js"></script>
 </body>
 </html>
 

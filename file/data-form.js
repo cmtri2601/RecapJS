@@ -112,7 +112,7 @@ const uploadFile = (file) => {
         body: file,
         header: header,
         mode: 'no-cors', //default mode of browser is cors but server is allow => set no-cors at request
-        method: 'POST'
+        method: 'POST' // can use 'HEAD' to fetch the header (size, type) first
     })
 
     fetch(req)
@@ -135,7 +135,7 @@ const uploadFiles = (files) => {
         body: form,
         // header: header, // don't need header anymore, data form auto set
         mode: 'no-cors', //default mode of browser is cors but server is allow => set no-cors at request
-        method: 'POST'
+        method: 'POST' // can use 'HEAD' to fetch the header (size, type) first
     })
 
     fetch(req)
