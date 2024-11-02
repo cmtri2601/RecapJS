@@ -11,7 +11,7 @@
  * 
  * The API includes the following abstractions for different types of streams:
  *     - ReadableStream: Represents a source from which data can be read. It can be created from various sources like fetch responses or file inputs.
- *     - WritableStream: Represents a destination to which data can be written. It can be used for tasks like writing to files or sending data to servers.
+ *     - WritableStream: Represents a destination to which data can be written. It can be used for tasks like writing to files or sending data to client/server.
  *     - TransformStream: Allows modification of data as it passes from a readable stream to a writable stream. It's useful for tasks like compression or encryption.
  * 
  * Ref:
@@ -19,10 +19,7 @@
  *     - https://developer.mozilla.org/en-US/docs/Web/API/Streams_API
  */
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const file = './ajax-file.txt'
 
 async function fetchAndTransformFile (file) {
     try {
@@ -43,9 +40,11 @@ async function fetchAndTransformFile (file) {
 function createTransformStream() {
     return new TransformStream({
         transform(chunk, controller) {
+            // get data from internal queue
             const text = new TextDecoder().decode(chunk);
             const upperCaseChunk = text.toUpperCase();
             const transformedBuffer = new TextEncoder().encode(upperCaseChunk);
+            // enqueue data for writable stream can read
             controller.enqueue(transformedBuffer);
         }
     })
@@ -60,5 +59,4 @@ function createWritableStream() {
     })
 }
 
-console.log(__dirname, '\n' ,import.meta.url);
-fetchAndTransformFile(__dirname + '/ajax-file.txt');
+fetchAndTransformFile(file);
