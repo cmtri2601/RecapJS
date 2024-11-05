@@ -11,7 +11,7 @@ const config = {
       - development: quickly redo, use sort mapping to trace down the error
       - production: minimize, compress 
   */
-  mode: 'development', // production
+  mode: 'production', // development
   
   // where root js file - can have multiple file
   entry: {
